@@ -5,9 +5,7 @@
 #include <QMainWindow>
 #include <QTimer>
 
-#define DEST "org.freedesktop.login1"
-#define PATH "/org/freedesktop/login1"
-#define INTERFACE "org.freedesktop.login1.Manager"
+#include "power.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,22 +18,19 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    enum class Operation { SHUTDOWN = 0, REBOOT, SUSPEND, HIBERNATE };
-    const static int DEFAULT_TIME = 60;
-    MainWindow(int timeToWait = DEFAULT_TIME, Operation defaultOperation = Operation::SHUTDOWN, QWidget *parent = nullptr);
+    MainWindow(int timeToWait, Power::Operation operation, Power &power, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
     Ui::MainWindow *m_ui;
     int m_timeToWait;
-    Operation m_defaultOperation;
+    Power::Operation m_defaultOperation;
     QTimer m_timer;
-    QDBusConnection m_dbusConnection;
-    QMap<Operation, QString> m_methods;
+    Power &m_power;
 
 public:
-    void performAction(Operation operation = Operation::SHUTDOWN);
-    QString operationToString(Operation operation);
+    void setTimeToWait(int timeToWait);
+    void setDefaultOperation(Power::Operation operation);
 
 private slots:
     void onTimeout();
