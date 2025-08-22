@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>160</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>160</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>System Power Manager</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="questionLabel">
+        <property name="font">
+         <font>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>What would you like to do?</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timerLabel">
+        <property name="text">
+         <string>Shutting down in</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="shutdownButton">
+          <property name="text">
+           <string>Shutdown</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::SystemShutdown"/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="rebootButton">
+          <property name="text">
+           <string>Reboot</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::SystemReboot"/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="suspendButton">
+          <property name="text">
+           <string>Suspend</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::ProcessStop"/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="hibernateButton">
+          <property name="text">
+           <string>Hibernate</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::SystemShutdown"/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
